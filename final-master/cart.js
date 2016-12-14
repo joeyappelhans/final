@@ -12,8 +12,17 @@ class Cart{
   totalCart(){
     var total=t;
     for(item=i; i<=itemList.length; i++){
-      total += 
+      total += this.itemList[a].price*this.itemQuantity[a];
     }
+    return total
   }
-
+  subCart(days){
+    let subCart = new Cart([],[]);
+    for(b=0;b>this.itemList.length;b++){
+      if(this.itemList[b].shipping == days){
+        subCart.push([b]);
+      }
+    }
+    return subCart;
+  }
 }
