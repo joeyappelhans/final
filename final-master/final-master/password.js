@@ -14,22 +14,23 @@ class Password{
     }
   }
 validPrivatekey(){
-  let part1 = this.privatekey.substring(0,4);
-  let part2 = this.privatekey.substring(5,9);
-  let part3 = this.privatekey.substring(10,14);
-  if(isNan(part1)){
-    
-  }
-
-  if(this.privatekey.chat([4]&&[9]=="-")){
-    return true
-  }
-  else{
-    return false
-  }
+  for(let j=0;j<this.privatekey.length;j++){
+    if(this.privatekey.charAt([4]&&[9]=="-")){
+      return false
+    }
+    else if(Number.isNan(Number(this.privatekey.substring(0,4)))){
+      return false
+    else if(Number.isNan(Number(this.privatekey.substring(5,9)))){
+        return false
+    else if(Number.isNan(Number(this.privatekey.substring(10,14)))){
+          return false
+    }
+    else{
+      return true
+    }
 }
   //Static function below this comment.
-  makePrivatekey(){
+static makePrivatekey(){
     let key= "";
     let limit=14;
     let group1="";
