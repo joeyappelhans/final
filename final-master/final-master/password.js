@@ -14,7 +14,14 @@ class Password{
     }
   }
 validPrivatekey(){
-  if(this.privatekey.chat([4]&&[9]=="x")){
+  let part1 = this.privatekey.substring(0,4);
+  let part2 = this.privatekey.substring(5,9);
+  let part3 = this.privatekey.substring(10,14);
+  if(isNan(part1)){
+    
+  }
+
+  if(this.privatekey.chat([4]&&[9]=="-")){
     return true
   }
   else{
@@ -32,7 +39,8 @@ validPrivatekey(){
       group1 += String(Math.floor(Math.random()*10));
       group2 += String(Math.floor(Math.random()*10));
       group3 += String(Math.floor(Math.random()*10));
+      key=group1 + "-" + group2 + "-" + group3;
     }
-    return group1 + "-" + group2 + "-" + group3;
+    return key
   }
 }
